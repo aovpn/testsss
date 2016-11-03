@@ -62,9 +62,9 @@
   </modules>
 
     <scm>
-        <url>https://github.com/Nmishin/jagger</url>
-        <connection>scm:git:git://github.com/Nmishin/jagger.git</connection>
-        <developerConnection>scm:git:git@github.com:Nmishin/jagger.git</developerConnection>
+        <url>https://github.com/Nmishin/testsss</url>
+        <connection>scm:git:git://github.com/Nmishin/testsss.git</connection>
+        <developerConnection>scm:git:git@github.com:Nmishin/testsss.git</developerConnection>
     </scm>
 
     <issueManagement>
