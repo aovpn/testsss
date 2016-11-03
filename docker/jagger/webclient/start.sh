@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
 # Docker variables
-IMAGE_NAME="jagger-web-client"
-VERSION_TAG="1.3"
+IMAGE_NAME="griddynamics/webclient"
+VERSION_TAG="latest"
 CONTAINER_NAME="jwc"
 HTTP_HOST_PORT=8080
 

@@ -1,0 +1,76 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <groupId>com.griddynamics.jagger</groupId>
+        <artifactId>parent</artifactId>
+        <version>1.2.6-SNAPSHOT</version>
+    </parent>
+
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>docker</artifactId>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.griddynamics.jagger</groupId>
+            <artifactId>webclient</artifactId>
+            <version>${version}</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>io.fabric8</groupId>
+                <artifactId>docker-maven-plugin</artifactId>
+                <version>0.16.5</version>
+                <configuration>
+                    <images>
+                        <image>
+                            <name>webclient</name>
+                            <build>
+                                <cleanup>true</cleanup>
+                                <tags>
+                                    <tag>latest</tag>
+                                </tags>
+                                <ports>
+                                    <port>80</port>
+                                </ports>
+                                <dockerFileDir>.</dockerFileDir>
+                                <assembly>
+
+                                </assembly>
+                            </build>
+                            <run>
+                                <namingStrategy>none</namingStrategy>
+                                <ports>
+                                    <port>8080:8080</port>
+                                </ports>
+                                <wait>
+                                    <tcp>
+                                        <ports>
+                                            <port>8080</port>
+                                        </ports>
+                                    </tcp>
+                                    <time>60000</time>
+                                </wait>
+                                <env>
+                                    <CLIENT_MW_URL>http://client-middleware-rest:8080</CLIENT_MW_URL>
+                                </env>
+                                <links>
+                                    <link>client-middleware-rest:client-middleware-rest</link>
+                                </links>
+                                <log>
+                                    <enabled>true</enabled>
+                                    <color>red</color>
+                                    <driver>
+                                        <name>json-file</name>
+                                        <opts>
+                                            <max-size>10m</max-size>
+                                            <max-file>5</max-file>
+                                        </opts>
+                                    </driver>
+                                </log>
+                            </run>
+                        </image>
+
+

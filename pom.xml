@@ -17,9 +17,7 @@
   ~ CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
   ~ OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
   ~ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-  -->
-
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  --><project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.griddynamics.jagger</groupId>
@@ -59,16 +57,18 @@
         <module>archetype-examples</module>
         <module>jaas</module>
         <module>rawdata</module>
-    </modules>
+    <module>test-suite-1</module>
+    <module>sst</module>
+  </modules>
 
     <scm>
-        <url>https://github.com/griddynamics/jagger</url>
-        <connection>scm:git:git://github.com/griddynamics/jagger.git</connection>
-        <developerConnection>scm:git:git@github.com:griddynamics/jagger.git</developerConnection>
+        <url>https://github.com/Nmishin/jagger</url>
+        <connection>scm:git:git://github.com/Nmishin/jagger.git</connection>
+        <developerConnection>scm:git:git@github.com:Nmishin/jagger.git</developerConnection>
     </scm>
 
     <issueManagement>
-        <url>https://github.com/griddynamics/jagger/issues</url>
+        <url>https://github.com/Nmishin/jagger/issues</url>
         <system>GitHub Issues</system>
     </issueManagement>
 
@@ -89,7 +89,7 @@
         <snapshotRepository>
             <id>gd-jagger-nexus-snapshots</id>
             <name>gd-jagger-nexus-snapshots</name>
-            <url>https://nexus.griddynamics.net/nexus/content/repositories/jagger-snapshots/</url>
+            <url>http://jenkins-docker.jagger.c4gd-orion.griddynamics.net:8081/nexus/content/repositories/jagger-snapshots/</url>
             <layout>default</layout>
             <uniqueVersion>false</uniqueVersion>
         </snapshotRepository>
@@ -97,7 +97,7 @@
         <repository>
             <id>gd-jagger-nexus-releases</id>
             <name>gd-jagger-nexus-releases</name>
-            <url>https://nexus.griddynamics.net/nexus/content/repositories/jagger-releases/</url>
+            <url>http://jenkins-docker.jagger.c4gd-orion.griddynamics.net:8081/nexus/content/repositories/jagger-releases/</url>
             <layout>default</layout>
         </repository>
     </distributionManagement>
@@ -703,4 +703,36 @@
             </plugin>
         </plugins>
     </reporting>
+    <profiles>
+        <profile>
+            <id>docker</id>
+            <build>
+                <pluginManagement>
+                    <plugins>
+                        <plugin>
+                            <groupId>org.codehaus.mojo</groupId>
+                            <artifactId>exec-maven-plugin</artifactId>
+                            <version>1.5.0</version>
+                            <executions>
+                                <execution>
+                                 <id>docker-build</id>
+                                    <phase>install</phase>
+                                    <goals>
+                                        <goal>exec</goal>
+                                    </goals>
+                                </execution>
+                                <execution>
+                                    <id>docker-push</id>
+                                    <phase>deploy</phase>
+                                    <goals>
+                                        <goal>exec</goal>
+                                    </goals>
+                                </execution>
+                            </executions>
+                        </plugin>
+                    </plugins>
+                </pluginManagement>
+            </build>
+        </profile>
+    </profiles>
 </project>
