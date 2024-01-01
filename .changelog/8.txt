@@ -1,0 +1,3 @@
+```release-note:enhancement
+resource/cloudflare_example: Test 0.0.2 tag
+```
