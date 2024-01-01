@@ -1,5 +1,9 @@
 ## 0.0.4 (Unreleased)
 
+ENHANCEMENTS:
+
+* resource/cloudflare_example: Test release 0.0.4 ([#11](https://github.com/cloudflare/terraform-provider-cloudflare/issues/11))
+
 ## 0.0.3 (Jan 01, 2024)
 
 ENHANCEMENTS:
