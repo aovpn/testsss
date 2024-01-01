@@ -1,5 +1,12 @@
 ## 0.0.2 (Unreleased)
 
+ENHANCEMENTS:
+
+* resource/cloudflare_example: Add 0.0.2 version ([#9](https://github.com/cloudflare/terraform-provider-cloudflare/issues/9))
+* resource/cloudflare_example: Test 0.0.2 tag ([#8](https://github.com/cloudflare/terraform-provider-cloudflare/issues/8))
+
+## 0.0.2 (Unreleased)
+
 ## 0.0.1 (Jan 01, 2024)
 
 ENHANCEMENTS:
