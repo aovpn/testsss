@@ -1,5 +1,9 @@
 ## 0.0.5 (Unreleased)
 
+BUG FIXES:
+
+* resource/cloudflare_example: Test release 0.0.5 ([#12](https://github.com/cloudflare/terraform-provider-cloudflare/issues/12))
+
 ## 0.0.4 (Jan 01, 2024)
 
 ENHANCEMENTS:
