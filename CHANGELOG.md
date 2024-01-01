@@ -1,4 +1,5 @@
-## 0.0.2 (Unreleased)
+## 0.0.3 (Unreleased)
+## 0.0.2 (Jan 01, 2024)
 
 ENHANCEMENTS:
 
