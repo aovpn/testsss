@@ -2,6 +2,7 @@
 
 BUG FIXES:
 
+* new: test job ([#17](https://github.com/cloudflare/terraform-provider-cloudflare/issues/17))
 * resource/cloudflare_example: Test release 0.0.5 ([#12](https://github.com/cloudflare/terraform-provider-cloudflare/issues/12))
 * resource/cloudflare_example: Test release 0.0.5 ([#13](https://github.com/cloudflare/terraform-provider-cloudflare/issues/13))
 * resource/cloudflare_example: Test release 0.0.5 ([#14](https://github.com/cloudflare/terraform-provider-cloudflare/issues/14))
