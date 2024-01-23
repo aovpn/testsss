@@ -3,6 +3,10 @@
 BUG FIXES:
 
 * resource/cloudflare_example: Test release 0.0.5 ([#12](https://github.com/cloudflare/terraform-provider-cloudflare/issues/12))
+* resource/cloudflare_example: Test release 0.0.5 ([#13](https://github.com/cloudflare/terraform-provider-cloudflare/issues/13))
+* resource/cloudflare_example: Test release 0.0.5 ([#14](https://github.com/cloudflare/terraform-provider-cloudflare/issues/14))
+* resource/cloudflare_example: Test release 0.0.5 ([#15](https://github.com/cloudflare/terraform-provider-cloudflare/issues/15))
+* resource/cloudflare_example: Test release 0.0.5 ([#16](https://github.com/cloudflare/terraform-provider-cloudflare/issues/16))
 
 ## 0.0.4 (Jan 01, 2024)
 
