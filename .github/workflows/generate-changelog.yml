@@ -8,9 +8,6 @@ on:
       - completed
   workflow_dispatch:
 
-permissions:
-  contents: write
-
 jobs:
   generate-changelog:
     if: github.event.pull_request.merged || github.event_name == 'workflow_dispatch'
@@ -35,5 +32,3 @@ jobs:
             git commit -m "$MSG"
             git push
           fi
-        env:
-          GITHUB_TOKEN: ${{ secrets.GH_PUSH_TOKEN }}
